@@ -18,3 +18,5 @@ ggplot(pg_mean, aes(x = group, y = weight, fill = group)) +
 #ggplot(pg_mean, aes (x="", y=weight, fill=group)) +
   #geom_col() +
   #coord_polar(theta="y")
+
+#640 x 480
