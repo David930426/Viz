@@ -18,11 +18,23 @@ ggplot(BOD, aes(x = Time, y = demand)) +
        caption = "By David, Data visualization course, Tunghai University, 2024") +
   theme(plot.title = element_text(hjust = 0.5, size = 20))
 
-ggplot(pg_mean, aes(x=group, y=weight)) +
+gggeom_col()ggplot(pg_mean, aes(x=group, y=weight)) +
   geom_point()
 
 ggplot(pg_mean, aes (x="", y=weight, fill=group)) +
   geom_col() +
   coord_polar(theta="y")
+
+ggplot(diamonds, aes(x = carat)) +
+  geom_histogram() +
+  labs(title = "Histogram chart", 
+       caption = "By David, Data visualization course, Tunghai University, 2024") +
+  theme(plot.title = element_text(hjust = 0.5, size = 20))
+
+ggplot(diamonds, aes(x = carat)) +
+  geom_bar() +
+  labs(title = "Bar chart", 
+       caption = "By David, Data visualization course, Tunghai University, 2024") +
+  theme(plot.title = element_text(hjust = 0.5, size = 20))
 
 #640 x 480
