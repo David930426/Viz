@@ -46,4 +46,16 @@ ggplot(df, aes(x = Year, y = Death)) +
        caption = "By David, Data Visualization Course, Tunghai University, 2024") +
   theme(plot.title = element_text(hjust = 0.5, size = 20))
 
+dt <- read.csv('David_Jakarta_temperature_and_humidity.csv')
 
+ggplot(dt, aes(x = factor(Month), y = Temperature)) +
+  geom_col() +
+  labs(title = "Jakarta Temperature 2014", 
+       caption = "By David, Data Visualization Course, Tunghai University, 2024") +
+  theme(plot.title = element_text(hjust = 0.5, size = 20))
+
+ggplot(dt, aes(x = factor(Month), y = Humidity)) +
+  geom_col() +
+  labs(title = "Jakarta Humidity 2024", 
+       caption = "By David, Data Visualization Course, Tunghai University, 2024") +
+  theme(plot.title = element_text(hjust = 0.5, size = 20))
