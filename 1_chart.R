@@ -6,12 +6,15 @@
 library(gcookbook)
 library(ggplot2)
 
-ggplot(pg_mean, aes(x=group, y=weight)) + 
-  geom_col()
-
-ggplot(pg_mean, aes(x=group, y=weight)) +
-  geom_point()
-
-ggplot(pg_mean, aes (x="", y=weight, fill=group)) +
+ggplot(pg_mean, aes(x = group, y = weight, fill = group)) + 
   geom_col() +
-  coord_polar(theta="y")
+  labs(title = "Bar chart", 
+       caption = "By David, Data visualization course, Tunghai University, 2024") +
+  theme(plot.title = element_text(hjust = 0.5, size = 20))
+
+#ggplot(pg_mean, aes(x=group, y=weight)) +
+  #geom_point()
+
+#ggplot(pg_mean, aes (x="", y=weight, fill=group)) +
+  #geom_col() +
+  #coord_polar(theta="y")
