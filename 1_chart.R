@@ -95,7 +95,7 @@ heightweight %>%
   select(ageYear, heightIn)
 
 ggplot(heightweight, aes(x = ageYear, y = heightIn, color = sex)) +
-  labs(title = "Age and Height", 
+  labs(title = "Age and Height by Gender", 
        x = "Age(Year)",
        y = "Height(Inch)",
        caption = "By David, Data Visualization Course, Tunghai University, 2024") +
