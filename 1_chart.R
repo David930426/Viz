@@ -4,6 +4,8 @@
 #
 #640 x 480
 
+library(tidyr)
+library(magrittr)
 library(gcookbook)
 library(ggplot2)
 
@@ -38,13 +40,23 @@ ggplot(diamonds, aes(x = carat)) +
        caption = "By David, Data Visualization Course, Tunghai University, 2024") +
   theme(plot.title = element_text(hjust = 0.5, size = 20))
 
-df <- read.csv('Accidents.csv')
 
-ggplot(df, aes(x = Year, y = Death)) +
-  geom_col() +
-  labs(title = "Accidents: Death", 
+
+accidents <- read.csv('Accidents.csv')
+
+accidents_longer <- accidents %>% pivot_longer(cols = c('Death','Injured'),
+                                               names_to = "Type",
+                                               values_to = 'Count')
+
+ggplot(accidents_longer, aes(x = as.factor(Year), y = Count, fill = Type)) +
+  labs(title = "Traffic Accidents", 
+       x = "Year",
        caption = "By David, Data Visualization Course, Tunghai University, 2024") +
-  theme(plot.title = element_text(hjust = 0.5, size = 20))
+  theme(plot.title = element_text(hjust = 0.5, size = 20)) +
+  geom_bar(position = 'dodge', stat = 'identity')
+
+
+
 
 dt <- read.csv('David_Jakarta_temperature_and_humidity.csv')
 
@@ -59,3 +71,18 @@ ggplot(dt, aes(x = factor(Month), y = Humidity)) +
   labs(title = "Jakarta Humidity 2023", 
        caption = "By David, Data Visualization Course, Tunghai University, 2024") +
   theme(plot.title = element_text(hjust = 0.5, size = 20))
+
+
+climate <- read.csv('David_Jakarta_temperature_and_humidity.csv')
+
+climate_longer <- climate %>% pivot_longer(cols = c('Temperature', 'Humidity'),
+                                           names_to = 'Type',
+                                           values_to = 'Count')
+ggplot(climate_longer, aes(x = as.factor(Month), y = Count, fill = Type)) +
+  labs(title = "Jakarta Temperature and Humidity 2023", 
+       x = "Year",
+       y = "Numbers",
+       caption = "By David, Data Visualization Course, Tunghai University, 2024") +
+  theme(plot.title = element_text(hjust = 0.5, size = 20)) +
+  geom_bar(position = 'dodge', stat = 'identity')
+
