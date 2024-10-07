@@ -86,3 +86,19 @@ ggplot(climate_longer, aes(x = as.factor(Month), y = Count, fill = Type)) +
   theme(plot.title = element_text(hjust = 0.5, size = 20)) +
   geom_bar(position = 'dodge', stat = 'identity')
 
+
+library(datasets)
+View(iris)
+library(dplyr)
+
+heightweight %>%
+  select(ageYear, heightIn)
+
+ggplot(heightweight, aes(x = ageYear, y = heightIn, color = sex)) +
+  labs(title = "Age and Height", 
+       x = "Age(Year)",
+       y = "Height(Inch)",
+       caption = "By David, Data Visualization Course, Tunghai University, 2024") +
+  theme(plot.title = element_text(hjust = 0.5, size = 20)) +
+  geom_point()
+
