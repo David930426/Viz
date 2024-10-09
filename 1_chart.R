@@ -102,3 +102,46 @@ ggplot(heightweight, aes(x = ageYear, y = heightIn, color = sex)) +
   theme(plot.title = element_text(hjust = 0.5, size = 20)) +
   geom_point()
 
+
+
+
+main_gate <- read.csv('David_Vehicle_data_main_gate.csv')
+
+main_gate_longer <- main_gate %>% pivot_longer(cols = c('Car', 'Motorcycle', 'Sum'),
+                                     names_to = 'Vehicle',
+                                     values_to = 'Count')
+ggplot(main_gate_longer, aes(x = as.factor(Day), y = Count, fill = Vehicle)) +
+  labs(title = "Tunghai University Vehicle Main Gate 2020", 
+       x = "Day",
+       y = "Numbers",
+       caption = "By David, Data Visualization Course, Tunghai University, 2024") +
+  theme(plot.title = element_text(hjust = 0.5, size = 20)) +
+  geom_bar(position = 'dodge', stat = 'identity')
+
+
+second_gate <- read.csv('David_Vehicle_data_second_gate.csv')
+
+second_gate_longer <- second_gate %>% pivot_longer(cols = c('Car', 'Motorcycle', 'Sum'),
+                                               names_to = 'Vehicle',
+                                               values_to = 'Count')
+ggplot(second_gate_longer, aes(x = as.factor(Day), y = Count, fill = Vehicle)) +
+  labs(title = "Tunghai University Vehicle Second Gate 2020", 
+       x = "Day",
+       y = "Numbers",
+       caption = "By David, Data Visualization Course, Tunghai University, 2024") +
+  theme(plot.title = element_text(hjust = 0.5, size = 20)) +
+  geom_bar(position = 'dodge', stat = 'identity')
+
+all_gate <- read.csv('David_Vehicle_all_data.csv')
+
+all_gate_longer <- all_gate %>% pivot_longer(cols = c('Car', 'Motorcycle', 'Sum'),
+                                               names_to = 'Vehicle',
+                                               values_to = 'Count')
+ggplot(all_gate_longer, aes(x = as.factor(Day), y = Count, fill = Vehicle)) +
+  labs(title = "All Vehicle enter Tunghai University 2020", 
+       x = "Day",
+       y = "Numbers",
+       caption = "By David, Data Visualization Course, Tunghai University, 2024") +
+  theme(plot.title = element_text(hjust = 0.5, size = 20)) +
+  geom_bar(position = 'dodge', stat = 'identity')
+
