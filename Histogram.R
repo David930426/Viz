@@ -64,9 +64,9 @@ ggplot(birthwt, aes(x = bwt)) +
 
 library(tidyverse)
 
-birthwt$smoke <- recode_factor(birthwt$smoke, '0' = 'No Smoke', '1' = 'Smoke')
+birthwt_mod$smoke <- recode_factor(birthwt$smoke, '0' = 'No Smoke', '1' = 'Smoke')
 
-ggplot(birthwt, aes(x = bwt)) + 
+ggplot(birthwt_mod, aes(x = bwt)) + 
   labs(title = "Birth Weight",
        x = "Birth Weight",
        y = "Count",
@@ -76,7 +76,7 @@ ggplot(birthwt, aes(x = bwt)) +
   facet_grid(. ~ smoke)
 
 
-ggplot(birthwt, aes(x = bwt, fill = smoke)) +
+ggplot(birthwt_mod, aes(x = bwt, fill = smoke)) +
   labs(title = "Birth Weight",
        x = "Birth Weight",
        y = "Count",
