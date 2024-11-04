@@ -9,7 +9,8 @@ library(magrittr)
 library(gcookbook)
 library(ggplot2)
 
-gggeom_col()ggplot(pg_mean, aes(x = group, y = weight)) +
+
+ggplot(pg_mean, aes(x = group, y = weight)) +
   geom_point()
 
 ggplot(pg_mean, aes (x="", y = weight, fill = group)) +

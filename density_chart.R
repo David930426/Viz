@@ -50,11 +50,14 @@ ggplot(stock, aes(x = Price)) +
 
 
 library(tidyverse)
+library(MASS)             # Load the package
 
-birthwt_mod$smoke <- recode_factor(birthwt$smoke, '0' = 'Non Smoking', '1' = 'Smoking')
 
 
-ggplot(birthwt_mod, aes(x = bwt, colour = smoke)) + 
+birthwt$smoke <- recode_factor(birthwt$smoke, '0' = 'Non Smoking', '1' = 'Smoking')
+
+
+ggplot(birthwt, aes(x = bwt, colour = smoke)) + 
   labs(title = "Birth Weight: Smoking vs Non-Smoking",
        x = "Birth Weight",
        y = "Density",
@@ -62,7 +65,7 @@ ggplot(birthwt_mod, aes(x = bwt, colour = smoke)) +
   theme(plot.title = element_text(hjust = 0.5, size = 20)) +
   geom_density()
 
-ggplot(birthwt_mod, aes(x = bwt, fill = smoke)) + 
+ggplot(birthwt, aes(x = bwt, fill = smoke)) + 
   labs(title = "Birth Weight: Smoking vs Non-Smoking",
        x = "Birth Weight",
        y = "Density",
