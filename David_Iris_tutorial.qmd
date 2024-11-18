@@ -14,13 +14,14 @@ This R code creates a data visaulization of the **iris dataset** using `ggplot2`
 
 ```{r}
 library(ggplot2)
+
 ```
 
 -   `ggplot2`: A popular package for creating elegant and customizable visualizations in R.
 
 ---
 
-### 2. Create the Initial Plot
+### 2. Create The Initial Plot
 
 ```{r}
 iris_plot <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) +
