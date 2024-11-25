@@ -1,5 +1,5 @@
 ---
-title: "Iris tutorial"
+title: "Iris"
 author: "David"
 format: html
 ---
@@ -14,14 +14,11 @@ This R code creates a data visaulization of the **iris dataset** using `ggplot2`
 
 ```{r}
 library(ggplot2)
-
 ```
 
 -   `ggplot2`: A popular package for creating elegant and customizable visualizations in R.
 
----
-
-### 2. Create The Initial Plot
+### 2. Create the Initial Plot
 
 ```{r}
 iris_plot <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) +
@@ -36,8 +33,6 @@ iris_plot <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) +
     -   Adds scatter points to the plot
 -   `facet_grid(. ~ Species)`:
     -   Splits the plot into separate panels for each `Species` (setosa, versicolor, virinica).
-    
----
 
 ### 3. Create a Data Frame for Custom Labels
 
@@ -54,7 +49,6 @@ f_labels <- data.frame(drv = c("setosa", "versicolor", "virginica"),
 ### 4. Add Custom Labels to the Plot
 
 ```{r}
-#| output: false
 iris_plot +
   geom_text(x = 6, y = 40, aes(label = label), data = f_labels)
 ```
@@ -69,7 +63,6 @@ iris_plot +
 ### 5. Add Title and Axis Labels
 
 ```{r}
-#| output: false
 labs(title = "Iris",
      x = "Sepal length",
      y = 'Sepal width',
@@ -84,7 +77,6 @@ labs(title = "Iris",
 ### 6. Customize Plot Theme
 
 ```{r}
-#| output: false
 theme(plot.title = element_text(hjust = 0.5, size = 20))
 ```
 
