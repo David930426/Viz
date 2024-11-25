@@ -33,7 +33,7 @@ p1 <- ggplot(PlantGrowth, aes(x = group, y = weight)) +
 
 p2 <- ggplot(PlantGrowth, aes(x = group, y = weight)) +
   geom_boxplot() +
-  coord_flip()+
+  coord_flip()+ 
   labs(title = "Weight VS Group",
        caption = "By David, DV, THU, 2024") +
   theme(plot.title = element_text(hjust = 0.5, size = 20))
