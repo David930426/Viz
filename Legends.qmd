@@ -11,12 +11,12 @@ format:
 
 - `library(ggplot2)`: Load the ggplot2 from library
 - `ggplot(PlantGrowth, aes(x = group, y = weight))`:
-  - Uses the built-in `PlantGrowth` dataset
+  - Uses the `PlantGrowth` dataset
   - Creates a plot with `group` on the x-axis and `weight` on the y-axis
   - `aes()` defines the aesthetic mappings of the plot
 - `geom_boxplot()`: Adds a box plot geometry to visualize the distribution of weights across different groups
-- `ggtitle('Basic Box Plot')`: Adds a title to the plot
-- `theme(plot.title = element_text(hjust=0.5))`: Centers the title horizontally `(hjust=0.5)`
+- `ggtitle('Basic Box Plot')`: Add a title to the plot
+- `theme(plot.title = element_text(hjust=0.5))`: Centers the title `(hjust=0.5)`
 
 ```{r}
 library(ggplot2)
@@ -29,3 +29,23 @@ ggplot(PlantGrowth, aes(x = group, y = weight)) +
 ```
 
 ## Add Legend
+
+- `library(gridExtra)`: Load gridExtra from library
+- `fill`: To fill the boxplot with colors and add a legend to inform the color
+- `color`: To color the border of boxplot and add a legend to inform the color
+- `grid.arrange()`: To arrange multiple boxplot
+- `top`: To add a title in a arrange of boxplot
+- `bottom`: To add a caption in a arrange of boxplot
+
+```{r}
+library(gridExtra)
+
+d1 <- ggplot(PlantGrowth, aes(x = group, y = weight)) +
+  geom_boxplot()
+d2 <- ggplot(PlantGrowth, aes(x = group, y = weight, fill = group)) +
+  geom_boxplot()
+d3 <- ggplot(PlantGrowth, aes(x = group, y = weight, color = group)) + 
+  geom_boxplot()
+
+grid.arrange(d1, d2, d3, ncol = 3, top = 'Add Legends', bottom = 'David, DV, THU, 2024')
+```
