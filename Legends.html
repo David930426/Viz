@@ -3230,7 +3230,15 @@ vertical-align: -.125em;
 </section>
 <section id="change-the-position-of-the-legend" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="change-the-position-of-the-legend"><span class="header-section-number">5</span> Change The Position of The Legend</h2>
-<p><code>theme(legend.position = )</code>: To move the position of the legend - <code>top</code>: To move the legend to the top of the boxplot - <code>bottom</code>: To move the legend to the bottom of the boxplot - <code>right</code>: To move the legend to the right of the boxplot - <code>left</code>: To move the legend to the left of the boxplot</p>
+<ul>
+<li><code>theme(legend.position = )</code>: To move the position of the legend
+<ul>
+<li><code>top</code>: To move the legend to the top of the boxplot</li>
+<li><code>bottom</code>: To move the legend to the bottom of the boxplot</li>
+<li><code>right</code>: To move the legend to the right of the boxplot</li>
+<li><code>left</code>: To move the legend to the left of the boxplot</li>
+</ul></li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(PlantGrowth, <span class="fu">aes</span>(<span class="at">x =</span> group, <span class="at">y =</span> weight, <span class="at">fill =</span> group)) <span class="sc">+</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
