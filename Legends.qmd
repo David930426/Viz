@@ -1,0 +1,11 @@
+---
+title: "Legends"
+author: "David"
+toc: true
+number-sections: true
+format: 
+  html: 
+    embed-resources: true
+---
+
+

@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 David
 Tunghai University, Taiwan
+=======
+James
+Tunghai University, Taiwan
+
+# Data Visualization Analysis
+>>>>>>> 99582db94ceaa8244cf7030de397e9a49464dd89
 
 ## Information
 

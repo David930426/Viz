@@ -1,4 +1,5 @@
 #
+<<<<<<< HEAD
 # David
 # Practice bar chart
 #
@@ -163,4 +164,22 @@ ggplot(faithful, aes(x = waiting)) +
 
 
 
+=======
+# James 
+# Practice bar chart
+#
+
+library(gcookbook)
+library(ggplot2)
+
+ggplot(pg_mean, aes(x=group, y=weight)) +
+  geom_col()
+
+ggplot(pg_mean, aes(x=group, y=weight)) +
+  geom_point()
+
+ggplot(pg_mean, aes(x="", y=weight, fill= group)) +
+  geom_col() +
+  coord_polar(theta = "y")
+>>>>>>> 99582db94ceaa8244cf7030de397e9a49464dd89
 
