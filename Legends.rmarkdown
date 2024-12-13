@@ -7,6 +7,8 @@ format:
   html: 
     embed-resources: true
 ---
+
+
 ## Basic Box Plot
 
 - `library(ggplot2)`: Load the ggplot2 from library
@@ -18,6 +20,8 @@ format:
 - `ggtitle('Basic Box Plot')`: Add a title to the plot
 - `theme(plot.title = element_text(hjust=0.5))`: Centers the title `(hjust=0.5)`
 
+
+
 ```{r}
 library(ggplot2)
 ggplot(PlantGrowth, aes(x = group, y = weight)) +
@@ -28,6 +32,8 @@ ggplot(PlantGrowth, aes(x = group, y = weight)) +
 
 ```
 
+
+
 ## Add Legend
 
 - `library(gridExtra)`: Load `gridExtra` from library
@@ -37,6 +43,8 @@ ggplot(PlantGrowth, aes(x = group, y = weight)) +
   - `ncol`: number input of column in one row
 - `top`: To add a title in a arrange of boxplot
 - `bottom`: To add a caption in a arrange of boxplot
+
+
 
 ```{r}
 library(gridExtra)
@@ -51,9 +59,13 @@ d3 <- ggplot(PlantGrowth, aes(x = group, y = weight, color = group)) +
 grid.arrange(d1, d2, d3, ncol = 3, top = 'Add Legends', bottom = 'David, DV, THU, 2024')
 ```
 
+
+
 ## Remove The Legend
 
 `guides(fill = 'none')`: To remove the legend
+
+
 
 ```{r}
 ggplot(PlantGrowth, aes(x = group, y = weight, fill = group)) + 
@@ -64,10 +76,14 @@ ggplot(PlantGrowth, aes(x = group, y = weight, fill = group)) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
+
+
 ## Change The Color of The Legend
 
 - `scale_fill_brewer(palette= "Pastel2")`: Change the color fill of the boxplot to `Pastel2`
 - `ggtitle()`: Add a title to the boxplot
+
+
 
 ```{r}
 ggplot(PlantGrowth, aes(x = group, y = weight, fill = group)) +
@@ -78,6 +94,8 @@ ggplot(PlantGrowth, aes(x = group, y = weight, fill = group)) +
   labs(caption = 'David, DV, THU, 2024')
 ```
 
+
+
 ## Change The Position of The Legend
 
 - `theme(legend.position = )`: To move the position of the legend
@@ -85,6 +103,8 @@ ggplot(PlantGrowth, aes(x = group, y = weight, fill = group)) +
   - `bottom`: To move the legend to the bottom of the boxplot
   - `right`: To move the legend to the right of the boxplot
   - `left`: To move the legend to the left of the boxplot
+
+
 
 ```{r}
 ggplot(PlantGrowth, aes(x = group, y = weight, fill = group)) +
@@ -96,9 +116,13 @@ ggplot(PlantGrowth, aes(x = group, y = weight, fill = group)) +
   labs(caption = 'David, DV, THU, 2024')
 ```
 
+
+
 ## Practice
 
 Practice changing color of the legend and change the position of the legend.
+
+
 
 ```{r}
 d1 <- ggplot(PlantGrowth, aes(x = group, y = weight, fill = group)) +
@@ -115,10 +139,14 @@ grid.arrange(d1, d2, d3, d4, ncol=2,
              top='Chainging Position of Legend', bottom = 'David, DV, THU, 2024')
 ```
 
+
+
 ## Change Legend Position
 
 - `theme(legend.position = c())`: Change the legend position in to the specific coordinate in the boxplot graph.
 - `theme(element_rect(fill = 'yellow', color = 'red'))`: Change the color of the legend and change the border color of the legend
+
+
 
 
 ```{r}
@@ -132,10 +160,14 @@ ggplot(PlantGrowth, aes(x = group, y = weight, fill = group)) +
   labs(caption = "David, DV, THU, 2024")
 ```
 
+
+
 ## Change the Border of Legend
 - `theme(legend.background = element_rect())`: To change the background color of legend or border color of the legend
   - `fill = `: To set a color to the background of the legend
   - `color = `: To set a border color to the legend
+
+
 
 ```{r}
 ggplot(PlantGrowth, aes(x = group, y = weight, fill = group)) +
@@ -149,9 +181,13 @@ ggplot(PlantGrowth, aes(x = group, y = weight, fill = group)) +
   labs(caption = "David, DV, THU, 2024")
 ```
 
+
+
 ## Change Background of Legend
 
 In `theme(legend.background = )`we can input `element_blank()` and `legend.key = element_blank())` to make the background as same as the boxplot background
+
+
 
 ```{r}
 ggplot(PlantGrowth, aes(x = group, y = weight, fill = group)) +
@@ -165,9 +201,13 @@ ggplot(PlantGrowth, aes(x = group, y = weight, fill = group)) +
   labs(caption = "David, DV, THU, 2024")
 ```
 
+
+
 ## Change Order of Items in Legend
 
 `scale_fill_discrete(limits = c())`: Change the position of the legend
+
+
 
 ```{r}
 d <- ggplot(PlantGrowth, aes(x = group, y = weight, fill = group)) +
@@ -188,9 +228,13 @@ grid.arrange(p1, p2, ncol = 2, top = "Change Order of Legend", bottom = "David, 
 
 ```
 
+
+
 ## Reverse Order of the Items in Legend
 
 `guides(fill = guide_legend(reverse = TRUE))`: To reverse the legend
+
+
 
 ```{r}
 d <- ggplot(PlantGrowth, aes(x = group, y = weight, fill = group)) +
@@ -210,9 +254,13 @@ p2 <- d + guides(fill = guide_legend(reverse = TRUE)) +
 grid.arrange(p1, p2, ncol = 2, top = "Reserve The Legend", bottom = "David, DV, THU, 2024")
 ```
 
+
+
 ## Change Legend Title
 
 `labs(fill = )`: To change the the legend title
+
+
 
 ```{r}
 p1 <- ggplot(PlantGrowth, aes(x = group, y = weight, fill = group)) +
