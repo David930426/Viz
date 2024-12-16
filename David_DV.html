@@ -3576,7 +3576,12 @@ vertical-align: -.125em;
 <section id="density-chart" class="level2" data-number="16">
 <h2 data-number="16" class="anchored" data-anchor-id="density-chart"><span class="header-section-number">16</span> Density chart</h2>
 <p>In this section, we will make a density chart using <code>faithful</code> dataset.</p>
-<p>We can use <code>geom_density</code> to add a density chart - <code>xlim()</code>: To determine the x line range of density chart. - <code>fill</code>: To add a color to the density chart. - <code>alpha</code>: To determine color density in the chart</p>
+<p>We can use <code>geom_density</code> to add a density chart</p>
+<ul>
+<li><code>xlim()</code>: To determine the x line range of density chart.</li>
+<li><code>fill</code>: To add a color to the density chart.</li>
+<li><code>alpha</code>: To determine color density in the chart</li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(faithful, <span class="fu">aes</span>(<span class="at">x =</span> waiting)) <span class="sc">+</span> </span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Density Chart&quot;</span>,</span>
@@ -3597,7 +3602,12 @@ vertical-align: -.125em;
 </section>
 <section id="histogram-and-density-chart" class="level2" data-number="17">
 <h2 data-number="17" class="anchored" data-anchor-id="histogram-and-density-chart"><span class="header-section-number">17</span> Histogram and Density chart</h2>
-<p>To add a histogram chart in the density chart we can directly add <code>geom_histogram</code>. - <code>fill</code>: To add a color in the density or histogram chart. - <code>colour</code>: To change histogram border color. - <code>size</code>: To set a size of the histogram chart.</p>
+<p>To add a histogram chart in the density chart we can directly add <code>geom_histogram</code>.</p>
+<ul>
+<li><code>fill</code>: To add a color in the density or histogram chart.</li>
+<li><code>colour</code>: To change histogram border color.</li>
+<li><code>size</code>: To set a size of the histogram chart.</li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(faithful, <span class="fu">aes</span>(<span class="at">x =</span> waiting, <span class="at">y =</span> <span class="fu">after_stat</span>(density))) <span class="sc">+</span> </span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Density Chart&quot;</span>,</span>

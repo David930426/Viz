@@ -5,7 +5,7 @@ date: '2024/12/02'
 toc: true
 number-sections: true
 format: 
-  pdf:
+  html:
     embed-resources: true
 ---
 
@@ -382,6 +382,7 @@ grid.arrange(p1, p2, p3, p4, ncol = 4,
 In this section, we will make a density chart using `faithful` dataset.
 
 We can use `geom_density` to add a density chart
+
 - `xlim()`: To determine the x line range of density chart.
 - `fill`: To add a color to the density chart.
 - `alpha`: To determine color density in the chart
@@ -403,6 +404,7 @@ ggplot(faithful, aes(x = waiting)) +
 ## Histogram and Density chart
 
 To add a histogram chart in the density chart we can directly add `geom_histogram`.
+
 - `fill`: To add a color in the density or histogram chart.
 - `colour`: To change histogram border color.
 - `size`: To set a size of the histogram chart.
