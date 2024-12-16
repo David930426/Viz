@@ -3,7 +3,7 @@ title: 'Axes'
 author: 'David'
 date: '2024/11/25'
 toc: true
-format: pdf
+format: html
 ---
 
 ## 1. Box plot

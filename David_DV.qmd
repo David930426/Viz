@@ -5,7 +5,7 @@ date: '2024/12/02'
 toc: true
 number-sections: true
 format: 
-  html:
+  pdf:
     embed-resources: true
 ---
 
@@ -133,6 +133,82 @@ ggplot(faithful, aes(x = waiting)) +
 
 ## Correlation chart
 
+In this section, we will draw correlation chart using `heightweight` dataset. Our goal is to make a correlation between two varialbles. In this case, we correlate `ageYear` and `heightIn` by using `geom_point`.
+
+```{r}
+ggplot(heightweight, aes(x = ageYear, y = heightIn)) +
+  geom_point()+
+  labs(title = "Age and Height",
+       x = 'Age (Year)',
+       y = "Height (Inch)",
+       caption = "David, DV, THU, 2024") +
+  theme(plot.title = element_text(hjust = 0.5, size = 14))
+```
+
+## Correlation chart: Color by group
+
+To add color in the chart we can add `color` function to `ggplot` function.
+
+We can add different color to determine different group by adding what group we want to differentiate. (`color = sex`)
+
+```{r}
+ggplot(heightweight, aes(x = ageYear, y = heightIn, color = sex)) +
+  geom_point()+
+  labs(title = "Age and Height",
+       x = 'Age (Year)',
+       y = "Height (Inch)",
+       caption = "David, DV, THU, 2024") +
+  theme(plot.title = element_text(hjust = 0.5, size = 14))
+```
+
+## Correlation chart: Add lines
+
+We can use these function to add lines in our graph:
+
+- `geom_vline()`: To add a vertical line.
+  - `yintercept =`: To determine coordinate where we want to add a horizontal line in y line.
+- `geom_hline()`: To add a horizontal line.
+  - `xintercept =`: To determine coordinate where we want to add a vertical line in x line.
+- `geom_abline()`: To add a line according to our decision.
+  - `intercept`: To determine coordinate where we want to add a line.
+  - `slope`: To define the slop of the line.
+
+```{r}
+ggplot(heightweight, aes(x = ageYear, y = heightIn, colour = sex)) +
+  geom_point() +
+  geom_hline(yintercept = 60) +
+  geom_vline(xintercept = 14) +
+  geom_abline(intercept = 37.4, slope = 1.75) +
+  labs(title = "Age and Height",
+       x = 'Age (Year)',
+       y = "Height (Inch)",
+       caption = "David, DV, THU, 2024") +
+  theme(plot.title = element_text(hjust = 0.5, size = 14))
+```
+
+## Correlation Chart: Change the text ticks of labels
+
+Now we want to change the text of tick labels by using `heightwight` dataset.
+
+- `breaks`: Specifying the locations of the tick marks and labels on the y-axis (breaks = seq(min, max, by = interval)). This gives you more control over the spacing and readability of the axis labels.
+- `labels`: Customizing the text of the axis labels (labels = function(x) …). This allows for formatting, unit specification, or abbreviation of the labels.
+
+```{r}
+#| warning: false
+#| message: false
+ggplot(heightweight, aes(x = ageYear, y = heightIn)) +
+  geom_point() +
+  scale_y_continuous(
+    breaks = c(50, 56, 60, 66, 72),
+    labels = c("Tiny", "Really\nshort", "Short", "Medium", "Tallish")
+  ) +
+  labs(title = "Age VS Height", caption = 'David, DV, THU, 2024') +
+  theme(plot.title = element_text(hjust = 0.5, size = 20))
+```
+
+
+## Multigroup histogram
+
 To make a double histogram in a single chart, firstly we can add `MASS` to our `library()`, so we can use `facet_grid()` function.
 
 ```{r}
@@ -159,6 +235,8 @@ ggplot(birthwt, aes(x = bwt)) +
   geom_histogram(fill = "white", colour = "black") +
   facet_grid(smoke ~ .)
 ```
+
+## Multigroup Histogram: Change the name of histogram
 
 To change the name of the histogram we can use `recode_factor()`, but first we must input `tidyverse` in our `library()`.
 
@@ -198,8 +276,7 @@ ggplot(birthwt_mod, aes(x = bwt)) +
   facet_grid(. ~ smoke)
 ```
 
-
-## Correlation chart: Color by group
+## Multigroup Histogram: Add color
 
 We can give color to the histogram by using `fill` in the `ggplot` function.
 
@@ -219,7 +296,7 @@ ggplot(birthwt_mod, aes(x = bwt, fill = smoke)) +
 
 ```
 
-## Multigroup histogram
+## Multigroup Histogram: Add more than 2 histogram chart
 
 In this section we will use functions from `gridExtra` library.
 
@@ -265,6 +342,8 @@ grid.arrange(p1, p2, p3, ncol=3,
   
 ```
 
+## Multigroup Histogram: Remove tick marks
+
 We can remove the tick marks in `faithful` dataset.
 
 - To remove the tick marks, use `theme(axis.ticks=element_blank())`. This will remove the tick marks on both axes.
@@ -298,35 +377,69 @@ grid.arrange(p1, p2, p3, p4, ncol = 4,
              bottom = "David, DV, THU, 2024")
 ```
 
-Not just in histogram we can make the multigroup chart, we also can use different functions, like `geom_boxplot`, `geom_point`, and `geom_line`
+## Density chart
 
-Now we want to change the text of tick labels by using `heightwight` dataset.
+In this section, we will make a density chart using `faithful` dataset.
 
-- `breaks`: Specifying the locations of the tick marks and labels on the y-axis (breaks = seq(min, max, by = interval)). This gives you more control over the spacing and readability of the axis labels.
-- `labels`: Customizing the text of the axis labels (labels = function(x) …). This allows for formatting, unit specification, or abbreviation of the labels.
+We can use `geom_density` to add a density chart
+- `xlim()`: To determine the x line range of density chart.
+- `fill`: To add a color to the density chart.
+- `alpha`: To determine color density in the chart
 
 ```{r}
 #| warning: false
 #| message: false
 
-p1 <- ggplot(heightweight, aes(x = ageYear, y = heightIn)) +
-  geom_point() +
-  labs(title = "Age VS Height") +
-  theme(plot.title = element_text(hjust = 0.5, size = 20))
-
-p2 <- ggplot(heightweight, aes(x = ageYear, y = heightIn)) +
-  geom_point() +
-  scale_y_continuous(
-    breaks = c(50, 56, 60, 66, 72),
-    labels = c("Tiny", "Really\nshort", "Short", "Medium", "Tallish")
-  ) +
-  labs(title = "Age VS Height") +
-  theme(plot.title = element_text(hjust = 0.5, size = 20))
-
-grid.arrange(p1, p2, ncol = 2,
-             top = 'Changing the Text of Tick Labels',
-             bottom = "David, DV, THU, 2024")
+ggplot(faithful, aes(x = waiting)) + 
+  labs(title = "Density Chart",
+       x = "Waiting",
+       y = "Density",
+       caption = "By David, Data Visualization Course, Tunghai University, 2024") +
+  theme(plot.title = element_text(hjust = 0.5, size = 20)) +
+  geom_density(fill = "blue", alpha = .2) +
+  xlim(35, 105)
 ```
+
+## Histogram and Density chart
+
+To add a histogram chart in the density chart we can directly add `geom_histogram`.
+- `fill`: To add a color in the density or histogram chart.
+- `colour`: To change histogram border color.
+- `size`: To set a size of the histogram chart.
+
+```{r}
+#| warning: false
+#| message: false
+
+ggplot(faithful, aes(x = waiting, y = after_stat(density))) + 
+  labs(title = "Density Chart",
+       x = "Waiting",
+       y = "Density",
+       caption = "By David, Data Visualization Course, Tunghai University, 2024") +
+  theme(plot.title = element_text(hjust = 0.5, size = 20)) +
+  geom_histogram(fill = "cornsilk", colour = "grey60", size = .2) +
+  geom_density(fill = "blue", alpha = .2) +
+  xlim(35, 105)
+```
+
+## Box plot
+
+In this section, we will make a boxplot using `geom_boxplot` function in the `ggplot`. We will use `ToothGrowth` function. 
+
+```{r}
+#| warning: false
+#| message: false
+
+ggplot(ToothGrowth, aes(x  = interaction(supp, dose), y = len)) + 
+  labs(title = "Boxplot With Ggplot",
+       x = "Supp",
+       y = "Len",
+       caption = "David, DV, THU, 2024") +
+  theme(plot.title = element_text(hjust = 0.5, size = 20)) +
+  geom_boxplot()
+```
+
+## Boxplot: Add labels and rotate labels
 
 We use `PlantGrowth` dataset to try use these functions:
 
@@ -357,11 +470,5 @@ grid.arrange(p1, p2, p3, ncol = 3,
              top = 'Group VS Weight',
              bottom = "David, DV, THU, 2024")
 ```
-
-## Density chart
-
-## Histogram and Density chart
-
-## Box plot
 
 

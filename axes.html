@@ -84,7 +84,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#box-plot" id="toc-box-plot" class="nav-link active" data-scroll-target="#box-plot">1. Box plot</a></li>
   <li><a href="#swap-x-and-y-axes" id="toc-swap-x-and-y-axes" class="nav-link" data-scroll-target="#swap-x-and-y-axes">2. Swap x and y axes</a></li>
   <li><a href="#arrange-two-plots-side-by-side" id="toc-arrange-two-plots-side-by-side" class="nav-link" data-scroll-target="#arrange-two-plots-side-by-side">3. Arrange two plots side by side</a></li>
-<<<<<<< HEAD
   <li><a href="#setting-the-range-of-a-continuous-axis" id="toc-setting-the-range-of-a-continuous-axis" class="nav-link" data-scroll-target="#setting-the-range-of-a-continuous-axis">4. Setting the Range of a Continuous Axis</a></li>
   <li><a href="#reversing-a-continuous-axis" id="toc-reversing-a-continuous-axis" class="nav-link" data-scroll-target="#reversing-a-continuous-axis">5. Reversing a Continuous Axis</a></li>
   <li><a href="#practice-multiple-charts-from-iris" id="toc-practice-multiple-charts-from-iris" class="nav-link" data-scroll-target="#practice-multiple-charts-from-iris">6. Practice: Multiple charts from Iris</a></li>
@@ -96,9 +95,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#changing-the-appearance-of-tick-labels" id="toc-changing-the-appearance-of-tick-labels" class="nav-link" data-scroll-target="#changing-the-appearance-of-tick-labels">12. Changing the Appearance of Tick Labels</a></li>
   <li><a href="#changing-the-text-of-axis-labels" id="toc-changing-the-text-of-axis-labels" class="nav-link" data-scroll-target="#changing-the-text-of-axis-labels">13. Changing the Text of Axis Labels</a></li>
   <li><a href="#removing-axis-labels" id="toc-removing-axis-labels" class="nav-link" data-scroll-target="#removing-axis-labels">14. Removing Axis Labels</a></li>
-  <li><a href="#changing-the-appearance-of-axis-labels" id="toc-changing-the-appearance-of-axis-labels" class="nav-link" data-scroll-target="#changing-the-appearance-of-axis-labels">15. Changing the Appearance of Axis Labels</a></li>
-=======
->>>>>>> 99582db94ceaa8244cf7030de397e9a49464dd89
+  <li><a href="#changing-the-appearance-of-axis-labels." id="toc-changing-the-appearance-of-axis-labels." class="nav-link" data-scroll-target="#changing-the-appearance-of-axis-labels.">15. Changing the Appearance of Axis Labels.</a></li>
   </ul>
 </nav>
 </div>
@@ -139,15 +136,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="box-plot">1. Box plot</h2>
 <ul>
 <li>Draw a boxplot using <code>PlantGrowth</code> dataset.</li>
-<<<<<<< HEAD
 <li>x axis represents group, y axis represents <code>weight</code>.</li>
 <li>Use <code>geom_boxplot()</code> function to draw boxplot.</li>
 <li><code>labs()</code> function is to add title, axis labels, and caption.</li>
 <li>Use <code>theme()</code> function to center the title.</li>
-=======
-<li><code>labs()</code> function is to add title, axis labels, and caption.</li>
-<li></li>
->>>>>>> 99582db94ceaa8244cf7030de397e9a49464dd89
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
@@ -168,11 +160,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="swap-x-and-y-axes" class="level2">
 <h2 class="anchored" data-anchor-id="swap-x-and-y-axes">2. Swap x and y axes</h2>
 <ul>
-<<<<<<< HEAD
 <li>Use <code>coord_flip()</code> function to swap x and y axes.</li>
-=======
-<li>Use</li>
->>>>>>> 99582db94ceaa8244cf7030de397e9a49464dd89
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
@@ -193,14 +181,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="arrange-two-plots-side-by-side" class="level2">
 <h2 class="anchored" data-anchor-id="arrange-two-plots-side-by-side">3. Arrange two plots side by side</h2>
-<<<<<<< HEAD
 <ul>
 <li>Install <code>gridExtra</code> library.</li>
 <li>Prepare two plots: <code>p1, p2</code>.</li>
 <li>Use <code>grid.arrange()</code> function to arrange plots and add title.</li>
 </ul>
-=======
->>>>>>> 99582db94ceaa8244cf7030de397e9a49464dd89
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
@@ -229,7 +214,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<<<<<<< HEAD
 <section id="setting-the-range-of-a-continuous-axis" class="level2">
 <h2 class="anchored" data-anchor-id="setting-the-range-of-a-continuous-axis">4. Setting the Range of a Continuous Axis</h2>
 <ul>
@@ -615,8 +599,8 @@ Adding another scale for y, which will replace the existing scale.</code></pre>
 </div>
 </div>
 </section>
-<section id="changing-the-appearance-of-axis-labels" class="level2">
-<h2 class="anchored" data-anchor-id="changing-the-appearance-of-axis-labels">15. Changing the Appearance of Axis Labels</h2>
+<section id="changing-the-appearance-of-axis-labels." class="level2">
+<h2 class="anchored" data-anchor-id="changing-the-appearance-of-axis-labels.">15. Changing the Appearance of Axis Labels.</h2>
 <ul>
 <li><code>axis.title.x = element_text(...)</code>: This specifies that we’re modifying the x-axis title. element_text is used to set text properties.</li>
 </ul>
@@ -637,8 +621,6 @@ Adding another scale for y, which will replace the existing scale.</code></pre>
 </div>
 </div>
 </section>
-=======
->>>>>>> 99582db94ceaa8244cf7030de397e9a49464dd89
 
 </main>
 <!-- /main column -->
